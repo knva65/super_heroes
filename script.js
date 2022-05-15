@@ -1,4 +1,5 @@
 let json = `[{
+    "id": 1,
     "title": "Бэтмен",
     "universe": "DC Comics",
     "ego": "Брюс Уэйн",
@@ -7,6 +8,7 @@ let json = `[{
     "superpowers": "интеллект, обширные познания, знания боевых искусств, ловкость",
     "picture": "https://n1s1.hsmedia.ru/13/a5/b2/13a5b2373d5e23489d9a4949ada5b927/547x397_0xac120002_8752067681540468870.jpg"
 },{
+    "id": 2,
     "title": "Супермен",
     "universe": "DC Comics",
     "ego": "Кларк Кент",
@@ -15,6 +17,7 @@ let json = `[{
     "superpowers": "непробиваемость, суперсила, полет, самоисцеление, суперзрение и суперслух, классный костюм",
     "picture": "https://n1s1.hsmedia.ru/06/d3/73/06d37321618034ec5f2a65b09c8576e3/547x397_0xac120002_45567661540468871.jpg"
 },{
+    "id": 3,
     "title": "Железный человек",
     "universe": "Marvel Comics",
     "ego": "Тони Старк",
@@ -38,23 +41,26 @@ for (let hero of heroes) {
     <div class='superpowers'><b>Суперсила:</b> ${hero.superpowers}</div>
     <div><img className='picture' src=${hero.picture} alt="" /></div>
     <div class="title_text">Поставьте свою оценку супергерою (от 1 до 10)</div>
-    <div class="score"><input type="number" max=10 min=1  required="" placeholder=""></div>
-    <div><input name="button" type="button" id="button" value="Оценить" onclick="checkMessage()"/></div>
+    <div class="score"><input type="number" max=10 min=1 required="" placeholder="" id="${hero.id}"></div>
+    <div><input name="button" type="button" id="button" value="Оценить" onclick="checkMessage('${hero.title}',${hero.id})"/></div>
     </div>`;
 
-    localStorage.removeItem(`${hero.title}`);
-    function checkMessage() {
-    localStorage.setItem(`${hero.title}`, document.getElementsByClassName("score").value);
-    }
+    
 
 }
 
 
 document.getElementById("heroesConteiner").innerHTML = heroesContent; 
 
+
+
 });
 
 
+    function checkMessage(title, id) {
+    localStorage.setItem(title, document.getElementById(id).value);
+    
+    }
 
 
 
