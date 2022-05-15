@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    padding: 20px;
+    padding-bottom: 20px;
+    border: 2px solid bisque;
+    border-radius: 10px;
+    text-align: center;
+    background-color: blanchedalmond;
+    margin: 10px;
+}
+
+#heroesConteiner {
+    width: 100vw;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.universe, .ego, .occupation, .friends, .superpowers {
+    margin-bottom: 10px;
+}
+
+.title_text {
+    margin-top: 20px;
+}
+
+.score, .title_text {
+    margin-bottom: 7px;
+}
+
+#button {
+    text-align: center;
+}
